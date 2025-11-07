@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 180 100% 50%;
+    --primary-foreground: 222 47% 5%;
+
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 222 47% 5%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 271 91% 65%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 180 100% 50%;
+
+    --radius: 1rem;
+
+    /* Cyber theme specific */
+    --cyber-glow: 180 100% 50%;
+    --cyber-glow-secondary: 217 91% 60%;
+    --cyber-glow-accent: 271 91% 65%;
+    
+    --glass-bg: 222 47% 8% / 0.4;
+    --glass-border: 180 100% 50% / 0.2;
+    
+    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 50% / 0.1), hsl(271 91% 65% / 0.1));
+    --gradient-glow: linear-gradient(135deg, hsl(180 100% 50%), hsl(217 91% 60%));
+    
+    --shadow-glow: 0 0 30px hsl(180 100% 50% / 0.3);
+    --shadow-glow-lg: 0 0 50px hsl(180 100% 50% / 0.4);
+    --shadow-glow-accent: 0 0 30px hsl(271 91% 65% / 0.3);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Glassmorphism utilities */
+  .glass {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+  }
+  
+  .glass-strong {
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+  }
+  
+  /* Glow effects */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(180 100% 50% / 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px hsl(180 100% 50% / 0.3),
+                inset 0 0 20px hsl(180 100% 50% / 0.1);
+  }
+  
+  .glow-border-accent {
+    box-shadow: 0 0 20px hsl(271 91% 65% / 0.3),
+                inset 0 0 20px hsl(271 91% 65% / 0.1);
+  }
+  
+  /* Animated gradient background */
+  .cyber-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background-size: 200% 200%;
+    animation: gradient-shift 15s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  /* Particle effect */
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Hover glow effect */
+  .hover-glow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(180 100% 50% / 0.4),
+                0 0 60px hsl(180 100% 50% / 0.2);
+    transform: translateY(-2px);
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(222 47% 8%);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(180 100% 50% / 0.3);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(180 100% 50% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
