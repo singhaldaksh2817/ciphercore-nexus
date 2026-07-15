@@ -69,7 +69,7 @@ const Index = () => {
           <footer className="mt-12 text-center pb-6">
             <div className="glass-strong rounded-full px-6 py-3 inline-block">
               <p className="text-sm text-muted-foreground">
-                © 2025 CipherCore by Daksh and Vansh
+                © 2025 CipherCore by Daksh
               </p>
             </div>
           </footer>
